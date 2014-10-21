@@ -19,6 +19,10 @@ assign(Game.prototype, {
     return (arr[Math.random() * 4 | 0] = 1, arr);
   },
 
+  isValidClick (x, y) {
+    return !!this.cb.buffer[x][y];
+  },
+
   init () {
     var n = this.cb.length;
     this.cb.add(this._getRandRow());
@@ -34,9 +38,14 @@ assign(Game.prototype, {
   },
 
   next () {
+    console.log('neext');
     this.cb.add(this._getRandRow());
 
     return this;
+  },
+
+  fail () {
+    console.log('FAAAAIL');
   }
 });
 

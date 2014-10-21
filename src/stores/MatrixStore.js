@@ -13,13 +13,20 @@ var MatrixStore = assign(Store, {
   getMatrixState: () => _matrix,
 
   dispatcherIndex: AppDispatcher.register((payload) => {
-    var action = payload.action;
+    var { action } = payload;
 
     switch (action.actionType) {
       case CONSTANTS.Matrix.UPDATE:
         _matrix = action.matrix.matrix;
         MatrixStore.emitChange();
 
+        break;
+
+      case CONSTANTS.Matrix.CLICK:
+        if (!game.isValidClick(action.x, action.y))
+          return game.fail();
+
+        game.next();
         break;
     }
 

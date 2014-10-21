@@ -7,5 +7,13 @@ module.exports = {
       actionType: CONSTANTS.Matrix.UPDATE,
       matrix: matrix
     });
-  }
+  },
+
+  click (x, y) {
+    AppDispatcher.handleViewAction({
+      actionType: CONSTANTS.Matrix.CLICK,
+      x: x,
+      y: y
+    });
+  },
 };
