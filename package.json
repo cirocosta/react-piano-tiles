@@ -5,12 +5,25 @@
   "main": "index.js",
   "author": "Ciro S. Costa <ciro9758@gmail.com> (http://cirocosta.github.io/)",
   "license": "MIT",
+  "jest": {
+    "scriptPreprocessor": "./utils/jsx-transform.js",
+    "unmockedModulePathPatterns": [
+      "./node_modules/react"
+    ],
+    "testFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  },
   "devDependencies": {
-    "react": "^0.11.2",
-    "webpack": "^1.4.8",
     "css-loader": "^0.9.0",
+    "jest-cli": "^0.1.18",
     "jsx-loader": "^0.11.2",
+    "react": "^0.11.2",
+    "react-matrix": "0.0.5",
+    "react-tools": "^0.11.2",
     "sass-loader": "^0.2.0",
-    "style-loader": "^0.8.1"
+    "style-loader": "^0.8.1",
+    "webpack": "^1.4.8"
   }
 }
