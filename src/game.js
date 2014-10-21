@@ -12,7 +12,7 @@ function Game () {
   if (!(this instanceof Game))
     return new Game();
 
-  this.cb = CircularBuffer.create(4);
+  this.cb = CircularBuffer.create(5);
 }
 
 assign(Game.prototype, {
@@ -25,15 +25,16 @@ assign(Game.prototype, {
   },
 
   isValidClick (x, y) {
-    return x === 2 ? !!this.cb.buffer[x][y] : false;
+    return !!this.cb.buffer[x][y];
   },
 
   init () {
     var n = this.cb.length;
+
     this.cb.add([STATES.start,STATES.start,STATES.start,STATES.start]);
-    this.cb.add(this._getRandRow());
-    this.cb.add(this._getRandRow());
-    this.cb.add(this._getRandRow());
+
+    while (--n)
+      this.cb.add(this._getRandRow());
 
     return this;
   },
@@ -43,7 +44,7 @@ assign(Game.prototype, {
   },
 
   next (x, y) {
-    this.cb.buffer[x][y] = STATES.passed;
+    this.getState()[x][y] = STATES.passed;
     this.cb.add(this._getRandRow());
 
     return this;

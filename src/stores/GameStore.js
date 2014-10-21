@@ -5,12 +5,10 @@ var CONSTANTS = require('../constants/');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 
 var game = Game().init();
-
 var _gameStatus = {
   started: false,
   failed: true
 };
-var _rAFid = null;
 var _matrix = game.getState();
 
 
@@ -30,8 +28,7 @@ var GameStore = assign(Store, {
       case CONSTANTS.Game.CLICK:
         if (!_gameStatus.started)
           return;
-
-        if (action.x !== 2)
+        else if (action.x !== 3)
           return;
         else if (!game.isValidClick(action.x, action.y))
           return (_gameStatus.started = false,

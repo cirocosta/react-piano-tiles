@@ -25,8 +25,6 @@ var Piano = React.createClass({
   },
 
   render () {
-    console.table(this.state.matrix);
-
     return (
       <div className={'Piano'}>
         <Matrix squareSize={CONSTANTS.Game.SQUARE_SIZE}

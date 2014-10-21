@@ -1,4 +1,16 @@
 .Piano {
+  .Grid {
+    stroke: black;
+    -webkit-transition: transform .1s ease;
+    -moz-transition: transform .1s ease;
+    -o-transition: transform .1s ease;
+    transition: transform .1s ease;
+
+    &:hover {
+      transform: translateY(100px);
+    }
+  }
+
   .tile-invalid {
     fill: #F0F0F0;
   }
