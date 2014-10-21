@@ -3,6 +3,7 @@ var Game = require('../game');
 var assign = require('object-assign');
 var CONSTANTS = require('../constants/');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
+var update = require('react/addons').addons.update;
 
 var game = Game().init();
 var _gameStatus = {
@@ -10,19 +11,26 @@ var _gameStatus = {
   failed: true
 };
 var _matrix = game.getState();
-
+var _x;
+var _y;
 
 var GameStore = assign(Store, {
-  getMatrixState: () => _matrix,
+  getGameState () {
+    return {
+      matrix: _matrix,
+      x: _x,
+      y: _y,
+      gameStatus: _gameStatus
+    };
+  },
 
   dispatcherIndex: AppDispatcher.register((payload) => {
     var { action } = payload;
 
     switch (action.actionType) {
-      case CONSTANTS.Game.UPDATE:
-        _matrix = action.matrix.matrix;
+      case CONSTANTS.Game.NEXT_STATE:
+        game.next(_x, _y);
         GameStore.emitChange();
-
         break;
 
       case CONSTANTS.Game.CLICK:
@@ -35,7 +43,10 @@ var GameStore = assign(Store, {
                   _gameStatus.failed = true,
                   game.fail());
 
-        game.next(action.x, action.y);
+        _x = action.x;
+        _y = action.y;
+
+        _matrix[_x][_y] = 2;
         GameStore.emitChange();
         break;
 

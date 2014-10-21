@@ -1,13 +1,19 @@
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateY(-100px);
+  }
+
+  to {
+    -webkit-transform: translateY(-0px);
+  }
+}
+
 .Piano {
   .Grid {
     stroke: black;
-    -webkit-transition: transform .1s ease;
-    -moz-transition: transform .1s ease;
-    -o-transition: transform .1s ease;
-    transition: transform .1s ease;
 
-    &:hover {
-      transform: translateY(100px);
+    &.move {
+      -webkit-animation: slide .3s linear;
     }
   }
 

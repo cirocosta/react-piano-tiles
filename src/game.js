@@ -25,7 +25,9 @@ assign(Game.prototype, {
   },
 
   isValidClick (x, y) {
-    return !!this.cb.buffer[x][y];
+    console.log(this.getState()[x]);
+
+    return !!this.getState()[x][y];
   },
 
   init () {

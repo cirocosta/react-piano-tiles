@@ -14,16 +14,9 @@ module.exports = {
     });
   },
 
-  endGame () {
+  nextState () {
     AppDispatcher.handleViewAction({
-      actionType: CONSTANTS.Game.END,
-    });
-  },
-
-  updateMatrix (matrix) {
-    AppDispatcher.handleViewAction({
-      actionType: CONSTANTS.Game.UPDATE,
-      matrix: matrix
+      actionType: CONSTANTS.Game.NEXT_STATE,
     });
   },
 
