@@ -1,3 +1,3 @@
 module.exports = {
-  MatrixActions: require('./MatrixActions')
+  GameActions: require('./GameActions')
 };

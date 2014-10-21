@@ -25,10 +25,10 @@ assign(Game.prototype, {
 
   init () {
     var n = this.cb.length;
-    this.cb.add(this._getRandRow());
-    this.cb.add(this._getRandRow());
-    this.cb.add(this._getRandRow());
     this.cb.add([2,2,2,2]);
+    this.cb.add(this._getRandRow());
+    this.cb.add(this._getRandRow());
+    this.cb.add(this._getRandRow());
 
     return this;
   },

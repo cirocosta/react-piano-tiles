@@ -8,5 +8,12 @@ module.exports = assign(Dispatcher.prototype, {
       source: CONSTANTS.VIEW_ACTION,
       action: action
     });
+  },
+
+  handleGeneralAction (action) {
+    this.dispatch({
+      source: CONSTANTS.GENERAL_ACTION,
+      action: action
+    });
   }
 });

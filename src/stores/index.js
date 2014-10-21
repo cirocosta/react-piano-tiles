@@ -1,4 +1,4 @@
 module.exports = {
-  MatrixStore: require('./MatrixStore'),
+  GameStore: require('./GameStore'),
   Store: require('./Store')
 };
