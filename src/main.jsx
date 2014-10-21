@@ -5,9 +5,10 @@
 'use strict';
 
 var React = require('react');
+var {GamePage} = require('./components');
 
 React.renderComponent(
-  <h1>dasdas</h1>,
+  <GamePage />,
   document.body
 );
 
