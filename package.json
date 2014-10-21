@@ -1,0 +1,16 @@
+{
+  "name": "react-piano-tiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Ciro S. Costa <ciro9758@gmail.com> (http://cirocosta.github.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^0.11.2",
+    "webpack": "^1.4.8",
+    "css-loader": "^0.9.0",
+    "jsx-loader": "^0.11.2",
+    "sass-loader": "^0.2.0",
+    "style-loader": "^0.8.1"
+  }
+}
