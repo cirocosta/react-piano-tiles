@@ -3,10 +3,13 @@ var Game = require('../game');
 var assign = require('object-assign');
 var CONSTANTS = require('../constants/');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
-var {gameLoop} = require('../utils');
 
 var game = Game().init();
 
+var _gameStatus = {
+  started: false,
+  failed: true
+};
 var _rAFid = null;
 var _matrix = game.getState();
 
@@ -25,20 +28,36 @@ var GameStore = assign(Store, {
         break;
 
       case CONSTANTS.Game.CLICK:
-        if (!game.isValidClick(action.x, action.y))
-          return game.fail();
+        if (!_gameStatus.started)
+          return;
 
-        game.next();
+        if (action.x !== 2)
+          return;
+        else if (!game.isValidClick(action.x, action.y))
+          return (_gameStatus.started = false,
+                  _gameStatus.failed = true,
+                  game.fail());
+
+        game.next(action.x, action.y);
         GameStore.emitChange();
         break;
 
-      // case CONSTANTS.Game.START:
-      //   _rAFid = requestAnimationFrame(gameLoop.tick);
-      //   break;
+      case CONSTANTS.Game.RESTART:
+        _gameStatus.failed = false;
+        _gameStatus.started = false;
+        game.init();
 
-      // case CONSTANTS.Game.END:
-      //   cancelAnimationFrame(_rAFid);
-      //   break;
+        GameStore.emitChange();
+        break;
+
+      case CONSTANTS.Game.START:
+        if (_gameStatus.failed) {
+          game.init();
+          _gameStatus.failed = false;
+        }
+
+        _gameStatus.started = true;
+        break;
     }
 
     return true;

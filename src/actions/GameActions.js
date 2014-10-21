@@ -8,6 +8,12 @@ module.exports = {
     });
   },
 
+  restartGame () {
+    AppDispatcher.handleViewAction({
+      actionType: CONSTANTS.Game.RESTART,
+    });
+  },
+
   endGame () {
     AppDispatcher.handleViewAction({
       actionType: CONSTANTS.Game.END,

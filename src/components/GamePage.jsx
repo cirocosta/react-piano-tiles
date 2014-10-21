@@ -8,8 +8,12 @@ var Piano = require('./Piano.jsx');
 var {GameActions} = require('../actions');
 
 var GamePage = React.createClass({
-  handleClick () {
+  handleStart () {
     GameActions.startGame();
+  },
+
+  handleRestart () {
+    GameActions.restartGame();
   },
 
   render () {
@@ -17,7 +21,8 @@ var GamePage = React.createClass({
       <main>
         <h1>React Piano Tiles!</h1>
         <Piano />
-        <button onClick={this.handleClick}>Start!</button>
+        <button onClick={this.handleStart}>Start!</button>
+        <button onClick={this.handleRestart}>Restart!</button>
       </main>
     );
   }

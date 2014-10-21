@@ -1,7 +1,12 @@
 var assign = require('object-assign');
 var { CircularBuffer } = require('./utils');
 var slice = Function.prototype.call.bind(Array.prototype.slice);
-
+var STATES = {
+  invalid: 0,
+  valid: 1,
+  passed: 2,
+  start: 3
+};
 
 function Game () {
   if (!(this instanceof Game))
@@ -11,21 +16,21 @@ function Game () {
 }
 
 assign(Game.prototype, {
-  _ARR: [0,0,0,0],
+  _ARR: [STATES.invalid, STATES.invalid, STATES.invalid, STATES.invalid],
 
   _getRandRow () {
     var arr = slice(this._ARR);
 
-    return (arr[Math.random() * 4 | 0] = 1, arr);
+    return (arr[Math.random() * 4 | 0] = STATES.valid, arr);
   },
 
   isValidClick (x, y) {
-    return !!this.cb.buffer[x][y];
+    return x === 2 ? !!this.cb.buffer[x][y] : false;
   },
 
   init () {
     var n = this.cb.length;
-    this.cb.add([2,2,2,2]);
+    this.cb.add([STATES.start,STATES.start,STATES.start,STATES.start]);
     this.cb.add(this._getRandRow());
     this.cb.add(this._getRandRow());
     this.cb.add(this._getRandRow());
@@ -37,15 +42,15 @@ assign(Game.prototype, {
     return this.cb.buffer;
   },
 
-  next () {
-    console.log('neext');
+  next (x, y) {
+    this.cb.buffer[x][y] = STATES.passed;
     this.cb.add(this._getRandRow());
 
     return this;
   },
 
   fail () {
-    console.log('FAAAAIL');
+    alert('FAAAAIL');
   }
 });
 

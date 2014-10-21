@@ -1,13 +1,17 @@
 .Piano {
-  .invalid {
+  .tile-invalid {
     fill: #F0F0F0;
   }
 
-  .valid {
+  .tile-valid {
     fill: #000000;
   }
 
-  .start {
+  .tile-passed {
+    fill: #F123AC;
+  }
+
+  .tile-start {
     fill: #FF00FF;
   }
 

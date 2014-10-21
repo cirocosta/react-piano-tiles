@@ -1,12 +1,13 @@
 var {keyMirror} = require('../utils');
 
 module.exports = keyMirror({
-  STATES: ['invalid', 'valid', 'start'],
-  SQUARE_SIZE: [50, 100],
+  STATES: ['tile-invalid', 'tile-valid', 'tile-passed', 'tile-start'],
+  SQUARE_SIZE: [50, 101],
 
   UPDATE: false,
   CLICK: false,
 
   START: false,
+  RESTART: false,
   END: false,
 });
