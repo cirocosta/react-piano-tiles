@@ -2,7 +2,7 @@ var Store = require('./Store');
 var Game = require('../game');
 var assign = require('object-assign');
 var CONSTANTS = require('../constants/');
-var {GameActions} = require('../actions');
+var {GameActions, TimerActions} = require('../actions');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var update = require('react/addons').addons.update;
 
@@ -57,6 +57,9 @@ var GameStore = assign(Store, {
         game.init();
 
         GameStore.emitChange();
+
+        TimerActions.stop();
+        process.nextTick(TimerActions.start);
         break;
 
       case CONSTANTS.Game.START:
@@ -67,6 +70,7 @@ var GameStore = assign(Store, {
 
         _gameStatus.started = true;
         GameStore.emitChange();
+        process.nextTick(TimerActions.start);
         break;
     }
 

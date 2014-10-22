@@ -18,16 +18,19 @@ var GamePage = React.createClass({
 
   render () {
     var dialog = null;
+    var timer = null;
 
     if (this.state.currentScreen === CONSTANTS.Application.SCREENS.START)
       dialog = <Dialog color={'blue'} show={true}><DialogStart /></Dialog>;
     else if (this.state.currentScreen === CONSTANTS.Application.SCREENS.FAIL)
       dialog = <Dialog color={'red'} show={true}><DialogFail /></Dialog>;
+    else
+      timer = <Timer />;
 
     return (
       <main className={'GamePage'}>
         <h1>React Piano Tiles!</h1>
-        <Timer />
+        {timer}
         <Piano>
           {dialog}
         </Piano>
