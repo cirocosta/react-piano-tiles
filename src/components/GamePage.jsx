@@ -2,7 +2,8 @@
  * @jsx React.DOM
  */
 
-var React = require('react');
+var React = require('react/addons');
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Piano = require('./Piano.jsx');
 var Timer = require('./Timer.jsx');
 var CONSTANTS = require('../constants');
@@ -32,7 +33,9 @@ var GamePage = React.createClass({
         <h1>React Piano Tiles!</h1>
         {timer}
         <Piano>
+          <ReactCSSTransitionGroup transitionName={"diag"}>
           {dialog}
+          </ReactCSSTransitionGroup>
         </Piano>
       </main>
     );
