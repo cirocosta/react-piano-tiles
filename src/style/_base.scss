@@ -1,10 +1,13 @@
 $base__fontFamily: 'Helvetica Neue', Helvetica, sans-serif;
 $base__fontSize: 62.5%;
 
-$piano__width: 20rem;
-$piano__height: 40rem;
+$piano__width--cel: 6rem;
+$piano__height--cel: 12rem;
 
-$piano__height--row: 10rem;
+$piano__width: $piano__width--cel * 4;
+$piano__height: $piano__height--cel * 4;
+
+$piano__height--row: $piano__height--cel;
 
 /**
  * Specific

@@ -12,6 +12,8 @@
 
 .Piano {
   position: relative;
+  overflow: hidden;
+  display: inline-block;
 
   .Grid {
     stroke: $color__stroke;
