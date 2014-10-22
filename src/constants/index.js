@@ -6,5 +6,6 @@ module.exports = keyMirror({
 
   CHANGE_EVENT: false,
 
-  Game: require('./GameConstants')
+  Game: require('./GameConstants'),
+  Timer: require('./TimerConstants')
 });

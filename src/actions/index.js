@@ -1,3 +1,4 @@
 module.exports = {
-  GameActions: require('./GameActions')
+  GameActions: require('./GameActions'),
+  TimerActions: require('./TimerActions')
 };

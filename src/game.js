@@ -25,8 +25,6 @@ assign(Game.prototype, {
   },
 
   isValidClick (x, y) {
-    console.log(this.getState()[x]);
-
     return !!this.getState()[x][y];
   },
 
