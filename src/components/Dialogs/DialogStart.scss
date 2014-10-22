@@ -1,0 +1,15 @@
+@import 'base';
+
+.DialogStart {
+  color: white;
+
+  button {
+    cursor: pointer;
+    background-color: $color__belizeHole;
+    border: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    margin: 1rem;
+  }
+}

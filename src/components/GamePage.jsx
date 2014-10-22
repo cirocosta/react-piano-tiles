@@ -20,9 +20,9 @@ var GamePage = React.createClass({
     var dialog = null;
 
     if (this.state.currentScreen === CONSTANTS.Application.SCREENS.START)
-      dialog = <Dialog show={true}><DialogStart /></Dialog>;
+      dialog = <Dialog color={'blue'} show={true}><DialogStart /></Dialog>;
     else if (this.state.currentScreen === CONSTANTS.Application.SCREENS.FAIL)
-      dialog = <Dialog show={true}><DialogFail /></Dialog>;
+      dialog = <Dialog color={'red'} show={true}><DialogFail /></Dialog>;
 
     return (
       <main className={'GamePage'}>

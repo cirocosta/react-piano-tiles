@@ -11,12 +11,15 @@ var Dialog = React.createClass({
     show: React.PropTypes.bool,
     children: React.PropTypes.oneOfType([
       React.PropTypes.arrayOf(React.PropTypes.component),
-      React.PropTypes.component])
+      React.PropTypes.component]),
+    color: React.PropTypes.oneOf(['blue', 'red'])
   },
 
   render () {
     var classes = cx({
       Dialog: true,
+      blue: this.props.color === 'blue',
+      red: this.props.color === 'red',
       show: this.props.show,
       hidden: !this.props.show
     });

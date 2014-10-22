@@ -21,6 +21,12 @@ var ApplicationStore = assign(Store, {
 
         ApplicationStore.emitChange();
         break;
+
+      case CONSTANTS.Game.FAIL:
+        _currentScreen = CONSTANTS.Application.SCREENS.FAIL;
+
+        ApplicationStore.emitChange();
+        break;
     }
 
     return true;

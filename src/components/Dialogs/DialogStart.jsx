@@ -2,6 +2,7 @@
  * @jsx React.DOM
  */
 
+require('./DialogStart.scss');
 var React = require('react');
 var {ApplicationActions, GameActions} = require('../../actions');
 var CONSTANTS = require('../../constants');
@@ -16,8 +17,8 @@ var DialogStart = React.createClass({
   render () {
     return (
       <div className='DialogStart'>
-        <h1>Welcome to React Piano Tiles! </h1>
-        <button onClick={this.handleClick}>Start!</button>
+        <h1>Welcome to <strong>React Piano Tiles</strong>!</h1>
+        <button onClick={this.handleClick}>START</button>
       </div>
     );
   }

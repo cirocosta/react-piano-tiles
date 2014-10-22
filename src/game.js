@@ -49,10 +49,6 @@ assign(Game.prototype, {
 
     return this;
   },
-
-  fail () {
-    alert('FAAAAIL');
-  }
 });
 
 

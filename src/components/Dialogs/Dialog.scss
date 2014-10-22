@@ -12,6 +12,14 @@
   text-align: center;
   transition: transform .1s ease, opacity .2s ease;
 
+  &.blue {
+    background-color: $color__peterRiver;
+  }
+
+  &.red {
+    background-color: $color__alizarin;
+  }
+
   &.show {
     transform: translateY(0);
     opacity: 1;

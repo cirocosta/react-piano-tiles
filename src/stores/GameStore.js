@@ -53,7 +53,7 @@ var GameStore = assign(Store, {
 
       case CONSTANTS.Game.RESTART:
         _gameStatus.failed = false;
-        _gameStatus.started = false;
+        _gameStatus.started = true;
         game.init();
 
         GameStore.emitChange();
