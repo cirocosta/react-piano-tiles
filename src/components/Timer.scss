@@ -1,9 +1,9 @@
 @import 'base';
 
 .Timer {
-  position: absolute;
-  width: $piano__width;
-  text-align: center;
+  position: relative;
+  margin: 0;
+  top: 6rem;
   color: white;
   text-shadow: .2rem .2rem 2.2rem black;
 }

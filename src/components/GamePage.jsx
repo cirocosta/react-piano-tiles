@@ -20,16 +20,16 @@ var GamePage = React.createClass({
   },
 
   render () {
-    // <Dialog>
-    //   <h2>content!</h2>
-    // </Dialog>
-
     return (
       <main className={'GamePage'}>
         <h1>React Piano Tiles!</h1>
         <div>
           <Timer />
-          <Piano />
+          <Piano>
+            <Dialog show={true}>
+              <h2>content!</h2>
+            </Dialog>
+          </Piano>
         </div>
         <button onClick={this.handleStart}>Start!</button>
         <button onClick={this.handleRestart}>Restart!</button>

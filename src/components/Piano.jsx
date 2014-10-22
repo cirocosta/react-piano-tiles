@@ -57,6 +57,7 @@ var Piano = React.createClass({
   render () {
     return (
       <div className={'Piano'}>
+        {this.props.children}
         <Matrix squareSize={CONSTANTS.Game.SQUARE_SIZE}
                 matrix={this.state.matrix}
                 onCellClick={this.handleCellClick}
