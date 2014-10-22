@@ -27,4 +27,12 @@ module.exports = {
       y: y
     });
   },
+
+  fail (x, y) {
+    AppDispatcher.handleViewAction({
+      actionType: CONSTANTS.Game.FAIL,
+      x: x,
+      y: y
+    });
+  },
 };

@@ -11,7 +11,7 @@ var rafLoop = {
   _timeStatus: {
     now: null,
     then: Date.now(),
-    interval: 1000/10,
+    interval: 1000/24,
     delta: null
   },
 

@@ -2,10 +2,10 @@
  * @jsx React.DOM
  */
 
-
 var React = require('react');
 var Piano = require('./Piano.jsx');
 var Timer = require('./Timer.jsx');
+var Dialog = require('./Dialog.jsx');
 var {GameActions} = require('../actions');
 
 var GamePage = React.createClass({
@@ -20,8 +20,12 @@ var GamePage = React.createClass({
   },
 
   render () {
+    // <Dialog>
+    //   <h2>content!</h2>
+    // </Dialog>
+
     return (
-      <main>
+      <main className={'GamePage'}>
         <h1>React Piano Tiles!</h1>
         <div>
           <Timer />

@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader?includePaths[]=' +
-                 __dirname + '/src'
+                 __dirname + '/src/style'
       },
       {
         test: /\.(js|jsx)$/,

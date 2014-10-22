@@ -2,6 +2,7 @@
  * @jsx React.DOM
  */
 
+require('./Timer.scss');
 var React = require('react');
 var {TimerStore} = require('../stores');
 var {TimerActions} = require('../actions');
@@ -24,7 +25,7 @@ var Timer = React.createClass({
 
   render () {
     return (
-      <p>{this.state.elapsedTime}</p>
+      <h1 className={'Timer'}>{(this.state.elapsedTime/1000).toFixed(2)}</h1>
     );
   }
 });

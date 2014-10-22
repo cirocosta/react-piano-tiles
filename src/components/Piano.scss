@@ -1,16 +1,18 @@
+@import 'base';
+
 @-webkit-keyframes slide {
   from {
-    -webkit-transform: translateY(-100px);
+    -webkit-transform: translateY($piano__height--row * -1);
   }
 
   to {
-    -webkit-transform: translateY(-0px);
+    -webkit-transform: translateY(0rem);
   }
 }
 
 .Piano {
   .Grid {
-    stroke: black;
+    stroke: $color__stroke;
 
     &.move {
       -webkit-animation: slide .1s linear;
@@ -18,19 +20,19 @@
   }
 
   .tile-invalid {
-    fill: #F0F0F0;
+    fill: $color__invalid;
   }
 
   .tile-valid {
-    fill: #000000;
+    fill: $color__valid;
   }
 
   .tile-passed {
-    fill: #F123AC;
+    fill: $color__passed;
   }
 
   .tile-start {
-    fill: #FF00FF;
+    fill: $color__sunFlower;
   }
 
 }

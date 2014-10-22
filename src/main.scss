@@ -1,0 +1,16 @@
+@import 'base';
+@import 'text';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $base__fontSize;
+}
+
+body {
+  font-family: $base__fontFamily;
+  margin: auto;
+  width: 60rem;
+}

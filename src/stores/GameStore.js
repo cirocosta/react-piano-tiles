@@ -2,13 +2,14 @@ var Store = require('./Store');
 var Game = require('../game');
 var assign = require('object-assign');
 var CONSTANTS = require('../constants/');
+var {GameActions} = require('../actions');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var update = require('react/addons').addons.update;
 
 var game = Game().init();
 var _gameStatus = {
   started: false,
-  failed: true
+  failed: false
 };
 var _matrix = game.getState();
 var _x;
@@ -39,9 +40,9 @@ var GameStore = assign(Store, {
         else if (action.x !== 3)
           return;
         else if (!game.isValidClick(action.x, action.y))
-          return (_gameStatus.started = false,
+          (_gameStatus.started = false,
                   _gameStatus.failed = true,
-                  game.fail());
+                  GameActions.fail());
 
         _x = action.x;
         _y = action.y;

@@ -21,8 +21,6 @@ var TimerStore = assign(Store, {
 
     switch (action.actionType) {
       case CONSTANTS.Timer.START:
-
-        console.log(action.actionType);
         if (_running)
           return;
 

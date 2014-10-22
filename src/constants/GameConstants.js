@@ -10,4 +10,6 @@ module.exports = keyMirror({
   START: 'GAME_START',
   RESTART: 'GAME_RESTART',
   END: 'GAME_END',
+
+  FAIL: 'GAME_FAIL',
 });

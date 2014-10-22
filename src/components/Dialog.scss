@@ -1,0 +1,21 @@
+@import 'base';
+
+.Dialog {
+  background-color: #F0F0F0;
+  position: absolute;
+  width: $piano__width;
+  height: $piano__height;
+  opacity: .5;
+  padding: 1rem;
+  text-align: center;
+
+  &.red {
+    background-color: red;
+    color: white;
+  }
+
+  &.green {
+    background-color: green;
+    color: white;
+  }
+}
