@@ -7,12 +7,14 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var _elapsedTime = 0;
 var _initial = null;
 var _running = false;
+var _last = 0;
 
 var TimerStore = assign(Store, {
   getTimerState () {
     return {
       elapsedTime: _elapsedTime,
-      running: _running
+      running: _running,
+      last: _last
     };
   },
 
@@ -37,6 +39,7 @@ var TimerStore = assign(Store, {
       case CONSTANTS.Timer.STOP:
         cancelAnimationFrame(rafLoop.rAFid);
         _running = false;
+        _last = _elapsedTime;
         _elapsedTime = 0.0;
         _initial = null;
 

@@ -49,6 +49,9 @@ var Piano = React.createClass({
     if (!this.state.gameStatus.started)
       return;
 
+    if (cellState.y > 3)
+      return;
+
     GameActions.click(cellState.y, cellState.x);
     $grid.offsetWidth = $grid.offsetWidth;
     $grid.classList.add('move');

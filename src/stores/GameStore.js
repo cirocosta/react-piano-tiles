@@ -14,6 +14,7 @@ var _gameStatus = {
 var _matrix = game.getState();
 var _x;
 var _y;
+var _tiles = 0;
 
 var GameStore = assign(Store, {
   getGameState () {
@@ -21,7 +22,8 @@ var GameStore = assign(Store, {
       matrix: _matrix,
       x: _x,
       y: _y,
-      gameStatus: _gameStatus
+      gameStatus: _gameStatus,
+      tiles: _tiles
     };
   },
 
@@ -41,24 +43,28 @@ var GameStore = assign(Store, {
           return;
         else if (!game.isValidClick(action.x, action.y))
           (_gameStatus.started = false,
-                  _gameStatus.failed = true,
-                  GameActions.fail());
+           _gameStatus.failed = true,
+           GameActions.fail());
 
         _x = action.x;
         _y = action.y;
+        !_gameStatus.failed && _tiles++;
 
         _matrix[_x][_y] = 2;
         GameStore.emitChange();
         break;
 
+      case CONSTANTS.Game.FAIL:
+        TimerActions.stop();
+        break;
+
       case CONSTANTS.Game.RESTART:
         _gameStatus.failed = false;
+        _tiles = 0;
         _gameStatus.started = true;
         game.init();
 
         GameStore.emitChange();
-
-        TimerActions.stop();
         process.nextTick(TimerActions.start);
         break;
 

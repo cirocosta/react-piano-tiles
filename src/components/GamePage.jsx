@@ -22,9 +22,9 @@ var GamePage = React.createClass({
     var timer = null;
 
     if (this.state.currentScreen === CONSTANTS.Application.SCREENS.START)
-      dialog = <Dialog color={'blue'} show={true}><DialogStart /></Dialog>;
+      dialog = <Dialog color={'blue'}><DialogStart /></Dialog>;
     else if (this.state.currentScreen === CONSTANTS.Application.SCREENS.FAIL)
-      dialog = <Dialog color={'red'} show={true}><DialogFail /></Dialog>;
+      dialog = <Dialog color={'red'}><DialogFail /></Dialog>;
     else
       timer = <Timer />;
 
