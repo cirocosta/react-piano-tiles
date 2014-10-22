@@ -4,11 +4,14 @@
 
 require('./Dialog.scss');
 var React = require('react');
-var {cx} = require('../utils');
+var {cx} = require('../../utils');
 
 var Dialog = React.createClass({
   propTypes: {
-    show: React.PropTypes.bool
+    show: React.PropTypes.bool,
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.arrayOf(React.PropTypes.component),
+      React.PropTypes.component])
   },
 
   render () {
@@ -20,7 +23,6 @@ var Dialog = React.createClass({
 
     return (
       <div className={classes}>
-        <h1>fucking dialog!</h1>
         {this.props.children}
       </div>
     );

@@ -12,16 +12,6 @@
   text-align: center;
   transition: transform .1s ease, opacity .2s ease;
 
-  &.red {
-    background-color: red;
-    color: white;
-  }
-
-  &.green {
-    background-color: green;
-    color: white;
-  }
-
   &.show {
     transform: translateY(0);
     opacity: 1;

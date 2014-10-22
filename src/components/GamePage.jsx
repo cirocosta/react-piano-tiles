@@ -5,34 +5,32 @@
 var React = require('react');
 var Piano = require('./Piano.jsx');
 var Timer = require('./Timer.jsx');
-var Dialog = require('./Dialog.jsx');
+var CONSTANTS = require('../constants');
+var {Dialog, DialogStart, DialogFail} = require('./Dialogs');
 var {GameActions} = require('../actions');
+var {ApplicationStore} = require('../stores');
+var storesGlueMixin = require('../mixins/storesGlueMixin');
 
 var GamePage = React.createClass({
-  handleStart () {
-    GameActions.startGame();
-    Timer.start();
-  },
+  mixins: [storesGlueMixin(ApplicationStore)],
 
-  handleRestart () {
-    GameActions.restartGame();
-    Timer.stop();
-  },
+  getStateFromStores: ApplicationStore.getApplicationState,
 
   render () {
+    var dialog = null;
+
+    if (this.state.currentScreen === CONSTANTS.Application.SCREENS.START)
+      dialog = <Dialog show={true}><DialogStart /></Dialog>;
+    else if (this.state.currentScreen === CONSTANTS.Application.SCREENS.FAIL)
+      dialog = <Dialog show={true}><DialogFail /></Dialog>;
+
     return (
       <main className={'GamePage'}>
         <h1>React Piano Tiles!</h1>
-        <div>
-          <Timer />
-          <Piano>
-            <Dialog show={true}>
-              <h2>content!</h2>
-            </Dialog>
-          </Piano>
-        </div>
-        <button onClick={this.handleStart}>Start!</button>
-        <button onClick={this.handleRestart}>Restart!</button>
+        <Timer />
+        <Piano>
+          {dialog}
+        </Piano>
       </main>
     );
   }

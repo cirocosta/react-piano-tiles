@@ -66,6 +66,7 @@ var GameStore = assign(Store, {
         }
 
         _gameStatus.started = true;
+        GameStore.emitChange();
         break;
     }
 

@@ -1,5 +1,6 @@
 module.exports = {
   GameStore: require('./GameStore'),
   TimerStore: require('./TimerStore'),
-  Store: require('./Store')
+  ApplicationStore: require('./ApplicationStore'),
+  Store: require('./Store'),
 };
