@@ -5,7 +5,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 
 var _currentScreen = CONSTANTS.Application.SCREENS.START;
 
-var ApplicationStore = assign(Store, {
+var ApplicationStore = assign({
   getApplicationState () {
     return {
       currentScreen: _currentScreen
@@ -31,6 +31,6 @@ var ApplicationStore = assign(Store, {
 
     return true;
   })
-});
+}, Store);
 
 module.exports = ApplicationStore;

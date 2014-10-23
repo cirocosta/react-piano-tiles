@@ -16,7 +16,7 @@ var _x;
 var _y;
 var _tiles = 0;
 
-var GameStore = assign(Store, {
+var GameStore = assign({
   getGameState () {
     return {
       matrix: _matrix,
@@ -82,6 +82,6 @@ var GameStore = assign(Store, {
 
     return true;
   })
-});
+}, Store);
 
 module.exports = GameStore;

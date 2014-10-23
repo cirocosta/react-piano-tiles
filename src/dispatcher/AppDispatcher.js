@@ -2,7 +2,7 @@ var Dispatcher = require('./Dispatcher');
 var CONSTANTS = require('../constants');
 var assign = require('object-assign');
 
-module.exports = assign(Dispatcher.prototype, {
+module.exports = assign({
   handleViewAction (action) {
     this.dispatch({
       source: CONSTANTS.VIEW_ACTION,
@@ -16,4 +16,4 @@ module.exports = assign(Dispatcher.prototype, {
       action: action
     });
   }
-});
+}, Dispatcher.prototype);

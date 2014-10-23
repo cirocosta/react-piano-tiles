@@ -3,7 +3,7 @@ var CONSTANTS = require('../constants/');
 var assign = require('object-assign');
 
 
-module.exports = assign(EventEmitter.prototype, {
+module.exports = assign({
   emitChange () {
     this.emit(CONSTANTS.CHANGE_EVENT);
   },
@@ -15,4 +15,4 @@ module.exports = assign(EventEmitter.prototype, {
   removeChangeListener (cb) {
     this.removeListener(CONSTANTS.CHANGE_EVENT, cb);
   }
-});
+}, EventEmitter.prototype);

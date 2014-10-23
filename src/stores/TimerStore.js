@@ -9,7 +9,7 @@ var _initial = null;
 var _running = false;
 var _last = 0;
 
-var TimerStore = assign(Store, {
+var TimerStore = assign({
   getTimerState () {
     return {
       elapsedTime: _elapsedTime,
@@ -49,6 +49,6 @@ var TimerStore = assign(Store, {
 
     return true;
   })
-});
+}, Store);
 
 module.exports = TimerStore;
