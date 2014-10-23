@@ -11,7 +11,7 @@ var CONSTANTS = require('../constants/');
 var { GameStore } = require('../stores/');
 var { GameActions } = require('../actions/');
 var storesGlueMixin = require('../mixins/storesGlueMixin');
-var animationEndEvts = ['animationend', 'animationend', 'webkitAnimationEnd',
+var animationEndEvts = ['animationend', 'webkitAnimationEnd',
                      'oanimationend', 'MSAnimationEnd'];
 var $grid;
 

@@ -3,10 +3,28 @@
 @-webkit-keyframes slide {
   from {
     -webkit-transform: translateY($piano__height--row * -1);
+        -ms-transform: translateY($piano__height--row * -1);
+            transform: translateY($piano__height--row * -1);
   }
 
   to {
     -webkit-transform: translateY(0rem);
+        -ms-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+}
+
+@keyframes slide {
+  from {
+    -webkit-transform: translateY($piano__height--row * -1);
+        -ms-transform: translateY($piano__height--row * -1);
+            transform: translateY($piano__height--row * -1);
+  }
+
+  to {
+    -webkit-transform: translateY(0rem);
+        -ms-transform: translateY(0rem);
+            transform: translateY(0rem);
   }
 }
 
@@ -20,6 +38,7 @@
 
     &.move {
       -webkit-animation: slide .1s linear;
+              animation: slide .1s linear;
     }
   }
 
