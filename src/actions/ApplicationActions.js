@@ -8,4 +8,10 @@ module.exports = {
       screen: screen
     });
   },
+
+  toggleAudio () {
+    AppDispatcher.handleViewAction({
+      actionType: CONSTANTS.Application.TOGGLE_AUDIO,
+    });
+  },
 };

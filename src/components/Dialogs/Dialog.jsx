@@ -11,7 +11,7 @@ var Dialog = React.createClass({
     children: React.PropTypes.oneOfType([
       React.PropTypes.arrayOf(React.PropTypes.component),
       React.PropTypes.component]),
-    color: React.PropTypes.oneOf(['blue', 'red'])
+    color: React.PropTypes.oneOf(['blue', 'red', 'gray'])
   },
 
   render () {
@@ -19,6 +19,7 @@ var Dialog = React.createClass({
       Dialog: true,
       blue: this.props.color === 'blue',
       red: this.props.color === 'red',
+      gray: this.props.color === 'gray',
       hidden: !this.props.show
     });
 

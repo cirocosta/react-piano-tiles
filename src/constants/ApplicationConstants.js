@@ -5,7 +5,9 @@ module.exports = keyMirror({
     START: 'START_SCREEN',
     FAIL: 'FAIL_SCREEN',
     GAME: 'GAME_SCREEN',
+    MENU: 'MENU_SCREEN',
   },
 
-  CHANGE_SCREEN: false
+  CHANGE_SCREEN: false,
+  TOGGLE_AUDIO: false
 });

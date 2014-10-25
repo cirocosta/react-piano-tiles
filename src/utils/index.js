@@ -3,5 +3,6 @@ module.exports = {
   CircularBuffer: require('./circular-buffer'),
   keyMirror: require('./keyMirror'),
   rafLoop: require('./rafLoop'),
+  store: require('./store'),
   cx: require('./cx')
 };

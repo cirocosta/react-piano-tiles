@@ -26,5 +26,9 @@
     "style-loader": "^0.8.1",
     "webpack": "^1.4.8",
     "object-assign": "^1.0.0"
+  },
+  "dependencies": {
+    "es6-promise": "^2.0.0",
+    "fetch": "git://github.com/github/fetch"
   }
 }
