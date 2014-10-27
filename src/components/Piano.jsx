@@ -16,7 +16,7 @@ var storesGlueMixin = require('../mixins/storesGlueMixin');
 var animationEndEvts = ['animationend', 'webkitAnimationEnd',
                      'oanimationend', 'MSAnimationEnd'];
 var $grid;
-var _sound;
+var _sounds = ['assets/a.wav', 'assets/b.wav', 'assets/c.wav', 'assets/d.wav'];
 
 var Piano = React.createClass({
   propTypes: {
@@ -59,7 +59,7 @@ var Piano = React.createClass({
       return;
 
     if (this.props.audio)
-      SoundActions.playSound('assets/a.wav');
+      SoundActions.playSound(_sounds[cellState.x]);
 
     GameActions.click(cellState.y, cellState.x);
     $grid.offsetWidth = $grid.offsetWidth;

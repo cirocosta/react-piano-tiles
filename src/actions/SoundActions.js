@@ -3,8 +3,6 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 
 module.exports = {
   loadSounds () {
-    console.log('hadsuhas');
-
     AppDispatcher.handleViewAction({
       actionType: CONSTANTS.Sound.SOUND_LOAD,
     });

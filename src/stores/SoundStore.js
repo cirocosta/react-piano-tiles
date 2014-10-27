@@ -4,7 +4,7 @@ var CONSTANTS = require('../constants/');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var {store, Sound} = require('../utils');
 
-var SOUNDS = ['assets/a.wav', 'assets/b.wav'];
+var SOUNDS = ['assets/a.wav', 'assets/b.wav', 'assets/c.wav', 'assets/d.wav'];
 var _sound = {};
 
 
