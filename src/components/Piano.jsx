@@ -6,17 +6,23 @@ require('./Piano.scss');
 
 var React = require('react/addons');
 var update = React.addons.update;
+var assign = require('object-assign');
+var Sound = require('../utils/Sound');
 var Matrix = require('react-matrix');
 var CONSTANTS = require('../constants/');
 var { GameStore } = require('../stores/');
-var { GameActions } = require('../actions/');
+var { GameActions, SoundActions } = require('../actions/');
 var storesGlueMixin = require('../mixins/storesGlueMixin');
 var animationEndEvts = ['animationend', 'webkitAnimationEnd',
                      'oanimationend', 'MSAnimationEnd'];
 var $grid;
-
+var _sound;
 
 var Piano = React.createClass({
+  propTypes: {
+    audio: React.PropTypes.bool.isRequired
+  },
+
   mixins: [storesGlueMixin(GameStore)],
 
   getStateFromStores: GameStore.getGameState,
@@ -51,6 +57,9 @@ var Piano = React.createClass({
 
     if (cellState.y > 3)
       return;
+
+    if (this.props.audio)
+      SoundActions.playSound('assets/a.wav');
 
     GameActions.click(cellState.y, cellState.x);
     $grid.offsetWidth = $grid.offsetWidth;

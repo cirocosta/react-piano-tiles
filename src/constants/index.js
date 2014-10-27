@@ -8,5 +8,6 @@ module.exports = keyMirror({
 
   Game: require('./GameConstants'),
   Timer: require('./TimerConstants'),
-  Application: require('./ApplicationConstants')
+  Sound: require('./SoundConstants'),
+  Application: require('./ApplicationConstants'),
 });

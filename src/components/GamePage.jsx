@@ -8,7 +8,7 @@ var Piano = require('./Piano.jsx');
 var Timer = require('./Timer.jsx');
 var CONSTANTS = require('../constants');
 var {Dialog, DialogStart, DialogFail, DialogMenu} = require('./Dialogs');
-var {GameActions} = require('../actions');
+var {GameActions, SoundActions} = require('../actions');
 var {ApplicationStore} = require('../stores');
 var storesGlueMixin = require('../mixins/storesGlueMixin');
 
@@ -20,6 +20,9 @@ var GamePage = React.createClass({
   render () {
     var dialog = null;
     var timer = null;
+
+    if (this.state.audio)
+      SoundActions.loadSounds();
 
     switch (this.state.currentScreen) {
       case CONSTANTS.Application.SCREENS.START:
@@ -42,7 +45,7 @@ var GamePage = React.createClass({
       <main className={'GamePage'}>
         <h1>React Piano Tiles!</h1>
         {timer}
-        <Piano>
+        <Piano audio={!!this.state.audio}>
           <ReactCSSTransitionGroup transitionName={"diag"}>
           {dialog}
           </ReactCSSTransitionGroup>
