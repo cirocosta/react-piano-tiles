@@ -19,6 +19,10 @@
     background-color: $color__alizarin;
   }
 
+  &.gray {
+    background-color: $color__concrete;
+  }
+
   &.diag-leave {
     opacity: 1;
     -webkit-transform: translateY(0);

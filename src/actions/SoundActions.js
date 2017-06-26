@@ -2,16 +2,16 @@ var CONSTANTS = require('../constants/');
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 
 module.exports = {
-  changeScreen (screen) {
+  loadSounds () {
     AppDispatcher.handleViewAction({
-      actionType: CONSTANTS.Application.CHANGE_SCREEN,
-      screen: screen
+      actionType: CONSTANTS.Sound.SOUND_LOAD,
     });
   },
 
-  toggleAudio () {
+  playSound (sound) {
     AppDispatcher.handleViewAction({
-      actionType: CONSTANTS.Application.TOGGLE_AUDIO,
+      actionType: CONSTANTS.Sound.SOUND_PLAY,
+      sound: sound
     });
   },
 };

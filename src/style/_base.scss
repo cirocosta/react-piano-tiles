@@ -10,21 +10,26 @@ $piano__height: $piano__height--cel * 4;
 $piano__height--row: $piano__height--cel;
 
 /**
- * Specific
- */
-
-$color__invalid: #ecf0f1;
-$color__valid: #2c3e50;
-$color__passed: #7f8c8d;
-$color__stroke: #95a5a6;
-
-/**
  * General Purpose
  */
 
+$color__clouds: #ecf0f1;
+$color__midnightBlue: #2c3e50;
+$color__abestos: #7f8c8d;
+$color__concrete: #95a5a6;
 $color__sunFlower: #f1c40f;
 $color__emerald: #2ecc71;
 $color__alizarin: #e74c3c;
 $color__pomegranate: #c0392b;
 $color__peterRiver: #3498db;
 $color__belizeHole: #2980B9;
+
+/**
+ * Specific
+ */
+
+$color__invalid: $color__clouds;
+$color__valid: $color__midnightBlue;
+$color__passed: $color__abestos;
+$color__stroke: $color__concrete;
+

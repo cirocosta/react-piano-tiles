@@ -8,17 +8,22 @@ var {ApplicationActions, GameActions} = require('../../actions');
 var CONSTANTS = require('../../constants');
 
 var DialogStart = React.createClass({
-  handleClick () {
+  handleStart () {
     ApplicationActions.changeScreen(CONSTANTS.Application.SCREENS.GAME);
     GameActions.startGame();
     // Timer.start();
+  },
+
+  handleMenu () {
+    ApplicationActions.changeScreen(CONSTANTS.Application.SCREENS.MENU);
   },
 
   render () {
     return (
       <div className='DialogStart'>
         <h1>Welcome to <strong>React Piano Tiles</strong>!</h1>
-        <button onClick={this.handleClick}>START</button>
+        <button onClick={this.handleStart}>START</button>
+        <button onClick={this.handleMenu}>MENU</button>
       </div>
     );
   }
